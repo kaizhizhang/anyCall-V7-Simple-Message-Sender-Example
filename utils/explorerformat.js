@@ -3,7 +3,8 @@ module.exports = async function formatExplorerLink(txhash,chainid,isEventbool){
         '80001':'https://mumbai.polygonscan.com/tx/',
         '97':'https://testnet.bscscan.com/tx/',
         '4':'https://rinkeby.etherscan.io/tx/',
-        '4002':'https://testnet.ftmscan.com/tx/'
+        '4002':'https://testnet.ftmscan.com/tx/',
+        '338':'https://testnet.cronoscan.com/tx/'
     }
 
     let url=`${chainidToExplorer[chainid]}${txhash}`

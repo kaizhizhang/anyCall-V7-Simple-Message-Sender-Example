@@ -13,13 +13,14 @@ function sleep(millis) {
   }
 
 // edit this to change the msg sent cross-chain
-const customMessage='Proof of cross-chain anyCall msg'
+const customMessage='Proof of cross-chain anyCall msg to Cronos'
 
 async function testanycall(){
     const chainid=network.config.chainId
 
-    const allchainids=[97,4002]
-    let destchainid = allchainids.filter(x => x!=chainid)[0]
+    //For cronos this will send to FTMtest for now
+    const allchainids=[97,4002,338]
+    let destchainid = allchainids.filter(x => x!=chainid)[1]
     const targetNetwork=chainidToNetwork[destchainid]
 
     console.log(`youre going from ${chainid} to ${destchainid+targetNetwork}`)

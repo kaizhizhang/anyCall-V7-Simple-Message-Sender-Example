@@ -4,6 +4,8 @@ require("dotenv").config()
 require("@nomiclabs/hardhat-etherscan")
 
 const bnbtestnetrpc=process.env.bnbtestnetrpc
+const cronostestnetrpc=process.env.cronostestnetrpc
+const cronosscanapi=process.env.cronosscanapi
 const prvkey=process.env.prvkey
 const bscscanapi=process.env.bscscanapi
 const ftmtestnetrpc=process.env.ftmtestnetrpc
@@ -30,6 +32,12 @@ module.exports = {
       url:bnbtestnetrpc,
       accounts:[prvkey],
       chainId:97,
+      blockConfirmations:4,
+    },
+    cronostest:{
+      url:cronostestnetrpc,
+      accounts:[prvkey],
+      chainId:338,
       blockConfirmations:4,
     },
     ftmtest:{
@@ -65,6 +73,7 @@ module.exports = {
   etherscan:{apiKey:{
     bscTestnet:bscscanapi,
     ftmTestnet:ftmscanapi,
+    cronosTestnet:cronosscanapi,
 
     goerli:process.env.goerliscanapi
   }},

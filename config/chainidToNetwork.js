@@ -4,6 +4,6 @@ module.exports={
     97:'bnbtest',
     4:'rinkeby',
     4002:'ftmtest',
-    5:'goerli'
-
+    5:'goerli',
+    338:'cronostest'
 }

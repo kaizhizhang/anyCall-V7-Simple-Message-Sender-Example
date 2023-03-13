@@ -9,10 +9,10 @@ module.exports = async ({getNamedAccounts,deployments})=>{
   const {deploy,log}=deployments
   const {testnetdeployer}=await getNamedAccounts()
   const chainid=network.config.chainId
-  log(`youre workign with network ${chainid}`)
+  log(`youre working with network ${chainid}`)
 
 
-  const allchainids=['97','4002']
+  const allchainids=['97','4002', '338']
   let destchainid = allchainids.filter(x => x!=chainid)
   console.log(`dest chain id is ${destchainid}`)
   let anycalladdress
@@ -23,8 +23,9 @@ module.exports = async ({getNamedAccounts,deployments})=>{
   else{
     anycalladdress=anycalladdressobj[chainid]
   }
-  
-  const args=[anycalladdress,destchainid[0]]
+
+  //For FTM and BSC this will send to Cronos for now
+  const args=[anycalladdress,destchainid[1]]
   const anycalltest=await deploy("Anycalltestboth",{
     from:testnetdeployer,
     args:args,
